@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>srn form</title>
+    <style>
+        #fun {
+            background-color: rgba(172, 223, 223, 0.452);
+        }
+
+        img {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+        }
+        table{
+            box-shadow:2px 5px 10px rgba(0,0,0,0.5);
+        }
+    </style>
+    <script>
+        function clickalert() {
+            alert("Successfully submitted");
+        }
+        function isemty() {
+            let fname = document.getElementById("fname").value;
+            let srn = document.getElementById("srn").value;
+            let mail = document.getElementById("mail").value;
+            let mobile = document.getElementById("mobile").value;
+            // let checkbox=document.getElementById("checkbox").value;
+            if (fname != "" && srn != "" && mail != "" && mobile != "") {
+                document.getElementById("btn").removeAttribute("disabled");
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor="darkgrey">
+    <fieldset>
+        <h1>Student Information</h1>
+        <img width="100" height="100" src="C:\Users\aleem\OneDrive\Desktop\html\pes_logo.jpeg"></img>
+        <table id="fun" border="2px solid black" width="600px">
+            <tr>
+                <th>SRN</th>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+            <tr>
+                <td rowspan="4">PES1UG21CS339</td>
+                <td>Web technology</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>Data structures</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>91</td>
+            </tr>
+            <tr>
+                <td>DDCO</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td colspan="3"> Result:Pass</td>
+            </tr>
+
+        </table>
+        </br>
+    
+        <h2>Re-evaluation Request Form</h2>
+        <form method="post">
+            <table id="fun" border="2px solid black" bordercolor="black">
+                <tr>
+                    <td><label for "fname">First Name</label></td>
+                    <td><input type="text" id="fname" name="fname" placeholder="First Name" onkeyup="isemty()" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label for "srn">SRN</label></td>
+                    <td><input type="text" id="srn" name="srn" placeholder="SRN" onkeyup="isemty()" required></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" id="male" name="action">
+                        <label for "male">Male</label>
+                        <input type="radio" id="female" name="action">
+                        <label for "female">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for "mail">Email Id</label></td>
+                    <td>
+                        <input type="email" id="mail" name="EMAIl" placeholder="example@gamil.com" onkeyup="isemty()"
+                            required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for "mobile">Mobile No.</label></td>
+                    <td>
+                        <input type="tel" id="mobile" name="mob" pattern="[0-9]{10}" placeholder="format-8123675497"
+                            onkeyup="isemty()" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Subject</td>
+                    <td>
+                        <select name="subject" value="subj" id="subject" required>
+                            <option>select subject</option>
+                            <option>web technology</option>
+                            <option>Data structures</option>
+                            <option>Python</option>
+                            <option>DDCO</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of request</td>
+                    <td><input type="date" id="date" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" id="checkbox" required>
+                        <label>I have verified above information are correct</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button id="btn" type="submit" disabled onclick="clickalert()">Submit</button></td>
+                    <td>
+                        <input type="reset" value="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+
+</html>
