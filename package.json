@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "xstream": "^11.14.0"
+  }
+}
